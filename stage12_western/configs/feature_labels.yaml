@@ -1,0 +1,193 @@
+# Western Stage1+2 — aligned to final_features_used (2026-07 best runs).
+
+stage1:
+  ALT:
+    input_type: continuous
+    label_zh: "丙氨酸氨基转移酶（ALT, U/L）"
+    label_en: "Alanine aminotransferase (ALT, U/L)"
+    scoring_zh: "实验室丙氨酸氨基转移酶。"
+    scoring_en: "Serum alanine aminotransferase."
+  Alb:
+    input_type: continuous
+    label_zh: "白蛋白（Alb, g/L）"
+    label_en: "Albumin (Alb, g/L)"
+    scoring_zh: "血清白蛋白浓度。"
+    scoring_en: "Serum albumin concentration."
+  BianXue:
+    input_type: ordinal
+    label_zh: "便血程度"
+    label_en: "Stool blood severity"
+    scoring_zh: "1=粪便隐血阴性；2=隐血阳性肉眼不可见；3=肉眼可见鲜血/暗红血(附表)；4=肉眼可见鲜血/暗红血(混合)；5=大量血便/柏油样便。"
+    scoring_en: "1=Occult blood negative; 2=Occult blood positive, no visible blood; 3=Visible blood (separate); 4=Visible blood (mixed); 5=Massive hematochezia/melena."
+    options:
+      - { value: 1, short_zh: "1 — 隐血阴性", short_en: "1 — Occult blood negative" }
+      - { value: 2, short_zh: "2 — 隐血阳性，肉眼不可见", short_en: "2 — Occult blood positive, not visible" }
+      - { value: 3, short_zh: "3 — 肉眼可见血便(附表)", short_en: "3 — Visible blood (separate)" }
+      - { value: 4, short_zh: "4 — 肉眼可见血便(混合)", short_en: "4 — Visible blood (mixed)" }
+      - { value: 5, short_zh: "5 — 大量血便/柏油样便", short_en: "5 — Massive blood / melena" }
+  BianZhi:
+    input_type: ordinal
+    label_zh: "便质"
+    label_en: "Stool consistency"
+    scoring_zh: "1=干硬；2=成形；3=软便；4=糊状便；5=稀水便。"
+    scoring_en: "1=Hard; 2=Formed; 3=Soft; 4=Paste; 5=Watery."
+    options:
+      - { value: 1, short_zh: "1 — 干硬", short_en: "1 — Hard" }
+      - { value: 2, short_zh: "2 — 成形", short_en: "2 — Formed" }
+      - { value: 3, short_zh: "3 — 软便", short_en: "3 — Soft" }
+      - { value: 4, short_zh: "4 — 糊状便", short_en: "4 — Paste" }
+      - { value: 5, short_zh: "5 — 稀水便", short_en: "5 — Watery" }
+  CRP:
+    input_type: continuous
+    label_zh: "C-反应蛋白（CRP, mg/L）"
+    label_en: "C-reactive protein (CRP, mg/L)"
+    scoring_zh: "血清 C-反应蛋白。"
+    scoring_en: "Serum C-reactive protein."
+  Fe:
+    input_type: continuous
+    label_zh: "血清铁（Fe, μmol/L）"
+    label_en: "Serum iron (Fe, μmol/L)"
+    scoring_zh: "血清铁浓度。"
+    scoring_en: "Serum iron concentration."
+  HCT:
+    input_type: continuous
+    label_zh: "红细胞比积（HCT, %）"
+    label_en: "Hematocrit (HCT, %)"
+    scoring_zh: "红细胞比积。"
+    scoring_en: "Hematocrit percentage."
+  K:
+    input_type: continuous
+    label_zh: "钾（K, mmol/L）"
+    label_en: "Potassium (K, mmol/L)"
+    scoring_zh: "血清钾离子浓度。"
+    scoring_en: "Serum potassium concentration."
+  LinBaJiShu:
+    input_type: continuous
+    label_zh: "淋巴细胞绝对值（×10⁹/L）"
+    label_en: "Lymphocyte absolute count (×10⁹/L)"
+    scoring_zh: "外周血淋巴细胞绝对计数。"
+    scoring_en: "Peripheral blood lymphocyte absolute count."
+  PCT:
+    input_type: continuous
+    label_zh: "降钙素原（PCT, ng/mL）"
+    label_en: "Procalcitonin (PCT, ng/mL)"
+    scoring_zh: "血清降钙素原。"
+    scoring_en: "Serum procalcitonin."
+  RBC:
+    input_type: continuous
+    label_zh: "红细胞计数（RBC, ×10¹²/L）"
+    label_en: "Red blood cell count (RBC, ×10¹²/L)"
+    scoring_zh: "外周血红细胞计数。"
+    scoring_en: "Peripheral red blood cell count."
+  TP:
+    input_type: continuous
+    label_zh: "总蛋白（TP, g/L）"
+    label_en: "Total protein (TP, g/L)"
+    scoring_zh: "血清总蛋白。"
+    scoring_en: "Serum total protein."
+  "Unnamed: 40":
+    input_type: continuous
+    label_zh: "钠（Na, mmol/L）"
+    label_en: "Sodium (Na, mmol/L)"
+    scoring_zh: "血清钠离子浓度。"
+    scoring_en: "Serum sodium concentration."
+  WBC:
+    input_type: continuous
+    label_zh: "白细胞计数（WBC, ×10⁹/L）"
+    label_en: "White blood cell count (WBC, ×10⁹/L)"
+    scoring_zh: "外周血白细胞计数。"
+    scoring_en: "Peripheral white blood cell count."
+
+stage2:
+  ALT:
+    input_type: continuous
+    label_zh: "丙氨酸氨基转移酶（ALT, U/L）"
+    label_en: "Alanine aminotransferase (ALT, U/L)"
+    scoring_zh: "实验室丙氨酸氨基转移酶。"
+    scoring_en: "Serum alanine aminotransferase."
+  Age:
+    input_type: continuous
+    label_zh: "年龄（岁）"
+    label_en: "Age (years)"
+    scoring_zh: "患者年龄（岁）。"
+    scoring_en: "Patient age in years."
+    min_value: 1
+  CRP:
+    input_type: continuous
+    label_zh: "C-反应蛋白（CRP, mg/L）"
+    label_en: "C-reactive protein (CRP, mg/L)"
+    scoring_zh: "血清 C-反应蛋白。"
+    scoring_en: "Serum C-reactive protein."
+  FC:
+    input_type: continuous
+    label_zh: "粪钙卫蛋白（FC, μg/g）"
+    label_en: "Fecal calprotectin (FC, μg/g)"
+    scoring_zh: "粪便钙卫蛋白浓度。"
+    scoring_en: "Fecal calprotectin concentration."
+  LinBaJiShu:
+    input_type: continuous
+    label_zh: "淋巴细胞绝对值（×10⁹/L）"
+    label_en: "Lymphocyte absolute count (×10⁹/L)"
+    scoring_zh: "外周血淋巴细胞绝对计数。"
+    scoring_en: "Peripheral blood lymphocyte absolute count."
+  NianYe:
+    input_type: ordinal
+    label_zh: "粪便粘液可见度"
+    label_en: "Visible stool mucus"
+    scoring_zh: "1=无粘液；2=少量粘液附着；3=大量粘液附着或混合。"
+    scoring_en: "1=No mucus; 2=Small amount; 3=Large amount or mixed."
+    options:
+      - { value: 1, short_zh: "1 — 无粘液", short_en: "1 — No mucus" }
+      - { value: 2, short_zh: "2 — 少量粘液", short_en: "2 — Small amount" }
+      - { value: 3, short_zh: "3 — 大量粘液/混合", short_en: "3 — Large amount / mixed" }
+  PCT:
+    input_type: continuous
+    label_zh: "降钙素原（PCT, ng/mL）"
+    label_en: "Procalcitonin (PCT, ng/mL)"
+    scoring_zh: "血清降钙素原。"
+    scoring_en: "Serum procalcitonin."
+  PaiBianKunn:
+    input_type: binary
+    label_zh: "排便困难"
+    label_en: "Difficult defecation"
+    scoring_zh: "0=无；1=有。"
+    scoring_en: "0=Absent; 1=Present."
+    options:
+      - { value: 0, short_zh: "0 — 无", short_en: "0 — Absent" }
+      - { value: 1, short_zh: "1 — 有", short_en: "1 — Present" }
+  PaiBianPinLv:
+    input_type: ordinal
+    label_zh: "排便频率"
+    label_en: "Bowel movement frequency"
+    scoring_zh: "1=每周≤3次；2=每天1–3次；3=每天4–6次；4=每天7–10次；5=每天>10次。"
+    scoring_en: "1=≤3/week; 2=1–3/day; 3=4–6/day; 4=7–10/day; 5=>10/day."
+    options:
+      - { value: 1, short_zh: "1 — 每周≤3次", short_en: "1 — ≤3 per week" }
+      - { value: 2, short_zh: "2 — 每天1–3次", short_en: "2 — 1–3 per day" }
+      - { value: 3, short_zh: "3 — 每天4–6次", short_en: "3 — 4–6 per day" }
+      - { value: 4, short_zh: "4 — 每天7–10次", short_en: "4 — 7–10 per day" }
+      - { value: 5, short_zh: "5 — 每天>10次", short_en: "5 — >10 per day" }
+  ESR:
+    input_type: continuous
+    label_zh: "红细胞沉降率（ESR, mm/1h）"
+    label_en: "Erythrocyte sedimentation rate (ESR, mm/1h)"
+    scoring_zh: "红细胞沉降率。"
+    scoring_en: "Erythrocyte sedimentation rate."
+  LiJiHouZhong:
+    input_type: binary
+    label_zh: "里急后重"
+    label_en: "Tenesmus"
+    scoring_zh: "0=无；1=有。"
+    scoring_en: "0=Absent; 1=Present."
+    options:
+      - { value: 0, short_zh: "0 — 无", short_en: "0 — Absent" }
+      - { value: 1, short_zh: "1 — 有", short_en: "1 — Present" }
+  XiaoShou:
+    input_type: binary
+    label_zh: "消瘦"
+    label_en: "Weight loss"
+    scoring_zh: "0=无；1=有。"
+    scoring_en: "0=Absent; 1=Present."
+    options:
+      - { value: 0, short_zh: "0 — 无", short_en: "0 — Absent" }
+      - { value: 1, short_zh: "1 — 有", short_en: "1 — Present" }

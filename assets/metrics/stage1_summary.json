@@ -1,0 +1,16 @@
+{
+  "stage": "stage1",
+  "run_dir": "F:\\KeTi\\Project\\outputs\\Stage1\\3_run_20260707_142952",
+  "threshold_dca": 0.34,
+  "external_validation": {
+    "n_external": 597,
+    "auc": 0.8678240142442778,
+    "auprc": 0.9200922339819975,
+    "f1": 0.9013761467889908,
+    "class_names": [
+      "0",
+      "1"
+    ],
+    "specificity_reported": 0.7421383647798742
+  }
+}

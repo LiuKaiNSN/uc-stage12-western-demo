@@ -80,6 +80,15 @@ Rebuild TCM assets into this repo (maintainers):
 python F:/KeTi/Project/Script_web/deploy/build_stage12_hub_assets.py
 ```
 
+## Analysis code (journals)
+
+| Paper | Folder | Scope |
+|-------|--------|--------|
+| Paper 1 | [`Code/`](Code/) | Baseline Model Stage 1–2 training, external validation, DCA, figures |
+| Paper 2 | [`Code_TCM/`](Code_TCM/) | TCM Integrated Model Stage 1–2 + Baseline vs TCM comparison scripts |
+
+Patient-level CSVs are **not** included. See each folder’s README for run directories and environment.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).

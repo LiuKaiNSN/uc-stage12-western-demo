@@ -1,0 +1,640 @@
+{
+  "task": "binary",
+  "model_run_dir": "F:\\KeTi\\Project\\TCM\\output\\Stage2\\6_run_20260707_111716",
+  "external_csv": "F:\\KeTi\\Project\\TCM\\data\\ATest-Stage2.csv",
+  "id_col": "No",
+  "label_col": "Disease",
+  "source_col": "Source",
+  "agerange_col": "Agerange",
+  "threshold": 0.5,
+  "n_features": 13,
+  "class_names": [
+    "0",
+    "1"
+  ],
+  "positive_class_name": "1",
+  "overall": {
+    "name": "全验证集",
+    "n_samples": 462,
+    "true_class_counts": {
+      "0": 218,
+      "1": 244
+    },
+    "classes_present": [
+      "0",
+      "1"
+    ],
+    "threshold": 0.5,
+    "positive_class": "1",
+    "metrics": {
+      "auc": 0.8973905850503836,
+      "auprc": 0.8878372531034152,
+      "acc": 0.8484848484848485,
+      "precision": 0.8085106382978723,
+      "recall": 0.9344262295081968,
+      "f1": 0.8669201520912547
+    },
+    "confusion_matrix": {
+      "matrix": [
+        [
+          164,
+          54
+        ],
+        [
+          16,
+          228
+        ]
+      ],
+      "rows": [
+        "true_0",
+        "true_1"
+      ],
+      "cols": [
+        "pred_0",
+        "pred_1"
+      ]
+    },
+    "pairwise_binary": [
+      {
+        "pair": "0_vs_1",
+        "auc": 0.8973905850503836,
+        "auprc": 0.8878372531034152,
+        "acc": 0.8484848484848485,
+        "f1": 0.8669201520912547,
+        "sensitivity": 0.9344262295081968,
+        "specificity": 0.7522935779816514,
+        "precision": 0.8085106382978723,
+        "recall": 0.9344262295081968
+      }
+    ]
+  },
+  "by_source": {
+    "SanFu": {
+      "name": "Source=SanFu",
+      "n_samples": 219,
+      "true_class_counts": {
+        "0": 145,
+        "1": 74
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "positive_class": "1",
+      "metrics": {
+        "auc": 0.8870456663560111,
+        "auprc": 0.8064171764177089,
+        "acc": 0.8036529680365296,
+        "precision": 0.6504854368932039,
+        "recall": 0.9054054054054054,
+        "f1": 0.7570621468926554
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            109,
+            36
+          ],
+          [
+            7,
+            67
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.8870456663560111,
+          "auprc": 0.8064171764177089,
+          "acc": 0.8036529680365296,
+          "f1": 0.7570621468926554,
+          "sensitivity": 0.9054054054054054,
+          "specificity": 0.7517241379310344,
+          "precision": 0.6504854368932039,
+          "recall": 0.9054054054054054
+        }
+      ]
+    },
+    "YanTai": {
+      "name": "Source=YanTai",
+      "n_samples": 243,
+      "true_class_counts": {
+        "0": 73,
+        "1": 170
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "positive_class": "1",
+      "metrics": {
+        "auc": 0.8750604351329574,
+        "auprc": 0.9183909351343071,
+        "acc": 0.8888888888888888,
+        "precision": 0.8994413407821229,
+        "recall": 0.9470588235294117,
+        "f1": 0.9226361031518625
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            55,
+            18
+          ],
+          [
+            9,
+            161
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.8750604351329574,
+          "auprc": 0.9183909351343071,
+          "acc": 0.8888888888888888,
+          "f1": 0.9226361031518625,
+          "sensitivity": 0.9470588235294117,
+          "specificity": 0.7534246575342466,
+          "precision": 0.8994413407821229,
+          "recall": 0.9470588235294117
+        }
+      ]
+    }
+  },
+  "by_agerange": {
+    "0": {
+      "name": "Agerange=0",
+      "n_samples": 311,
+      "true_class_counts": {
+        "0": 105,
+        "1": 206
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "positive_class": "1",
+      "metrics": {
+        "auc": 0.8568423485899214,
+        "auprc": 0.9057602595297973,
+        "acc": 0.8263665594855305,
+        "precision": 0.8089430894308943,
+        "recall": 0.9660194174757282,
+        "f1": 0.8805309734513275
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            58,
+            47
+          ],
+          [
+            7,
+            199
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.8568423485899214,
+          "auprc": 0.9057602595297973,
+          "acc": 0.8263665594855305,
+          "f1": 0.8805309734513275,
+          "sensitivity": 0.9660194174757282,
+          "specificity": 0.5523809523809524,
+          "precision": 0.8089430894308943,
+          "recall": 0.9660194174757282
+        }
+      ]
+    },
+    "1": {
+      "name": "Agerange=1",
+      "n_samples": 151,
+      "true_class_counts": {
+        "0": 113,
+        "1": 38
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "positive_class": "1",
+      "metrics": {
+        "auc": 0.8969492314857941,
+        "auprc": 0.7509913982717106,
+        "acc": 0.8940397350993378,
+        "precision": 0.8055555555555556,
+        "recall": 0.7631578947368421,
+        "f1": 0.7837837837837838
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            106,
+            7
+          ],
+          [
+            9,
+            29
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.8969492314857941,
+          "auprc": 0.7509913982717106,
+          "acc": 0.8940397350993378,
+          "f1": 0.7837837837837838,
+          "sensitivity": 0.7631578947368421,
+          "specificity": 0.9380530973451328,
+          "precision": 0.8055555555555556,
+          "recall": 0.7631578947368421
+        }
+      ]
+    }
+  },
+  "pairwise_summary_note": "二分类仅一行 pair（负类_vs_正类）；sensitivity/specificity/acc/f1 在 --threshold 下计算；auc/auprc 与阈值无关。宽表便于与 Stage3 的 external_pairwise_summary_wide 对照列结构。",
+  "type_montreal_slices": {
+    "uc_vs_cd": {
+      "description": "UC 与 CD 对照，使用全表 Disease 作为二分类金标准",
+      "n_samples": 304,
+      "true_class_counts": {
+        "0": 60,
+        "1": 244
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "positive_class": "1",
+      "metrics": {
+        "auc": 0.8195696721311475,
+        "auprc": 0.941727412690738,
+        "acc": 0.8618421052631579,
+        "precision": 0.8976377952755905,
+        "recall": 0.9344262295081968,
+        "f1": 0.9156626506024096
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            34,
+            26
+          ],
+          [
+            16,
+            228
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.8195696721311475,
+          "auprc": 0.941727412690738,
+          "acc": 0.8618421052631579,
+          "f1": 0.9156626506024096,
+          "sensitivity": 0.9344262295081968,
+          "specificity": 0.5666666666666667,
+          "precision": 0.8976377952755905,
+          "recall": 0.9344262295081968
+        }
+      ],
+      "slice_name": "子集[uc_vs_cd]: Type∈{UC,CD}, 金标准=Disease"
+    },
+    "uc_vs_ic": {
+      "description": "UC 与 IC 对照，使用全表 Disease 作为二分类金标准",
+      "n_samples": 306,
+      "true_class_counts": {
+        "0": 62,
+        "1": 244
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "positive_class": "1",
+      "metrics": {
+        "auc": 0.875,
+        "auprc": 0.9505171809834576,
+        "acc": 0.8921568627450981,
+        "precision": 0.9306122448979591,
+        "recall": 0.9344262295081968,
+        "f1": 0.9325153374233128
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            45,
+            17
+          ],
+          [
+            16,
+            228
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.875,
+          "auprc": 0.9505171809834576,
+          "acc": 0.8921568627450981,
+          "f1": 0.9325153374233128,
+          "sensitivity": 0.9344262295081968,
+          "specificity": 0.7258064516129032,
+          "precision": 0.9306122448979591,
+          "recall": 0.9344262295081968
+        }
+      ],
+      "slice_name": "子集[uc_vs_ic]: Type∈{UC,IC}, 金标准=Disease"
+    },
+    "uc_vs_crc": {
+      "description": "UC 与 CRC 对照，使用全表 Disease 作为二分类金标准",
+      "n_samples": 340,
+      "true_class_counts": {
+        "0": 96,
+        "1": 244
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "positive_class": "1",
+      "metrics": {
+        "auc": 0.9604892418032785,
+        "auprc": 0.9836409587438931,
+        "acc": 0.9205882352941176,
+        "precision": 0.9539748953974896,
+        "recall": 0.9344262295081968,
+        "f1": 0.9440993788819876
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            85,
+            11
+          ],
+          [
+            16,
+            228
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.9604892418032785,
+          "auprc": 0.9836409587438931,
+          "acc": 0.9205882352941176,
+          "f1": 0.9440993788819876,
+          "sensitivity": 0.9344262295081968,
+          "specificity": 0.8854166666666666,
+          "precision": 0.9539748953974896,
+          "recall": 0.9344262295081968
+        }
+      ],
+      "slice_name": "子集[uc_vs_crc]: Type∈{UC,CRC}, 金标准=Disease"
+    },
+    "na_pool_vs_uc_e1": {
+      "description": "阴性=Type∈{CD,IC,CRC}；阳性=UC 且 Montreal=1（E1）；得分仍为 P(1)",
+      "n_samples": 291,
+      "true_class_counts": {
+        "0": 218,
+        "1": 73
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "positive_class": "1",
+      "metrics": {
+        "auc": 0.9271710443634537,
+        "auprc": 0.7661194638152082,
+        "acc": 0.8109965635738832,
+        "precision": 0.5714285714285714,
+        "recall": 0.9863013698630136,
+        "f1": 0.7236180904522613
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            164,
+            54
+          ],
+          [
+            1,
+            72
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.9271710443634537,
+          "auprc": 0.7661194638152082,
+          "acc": 0.8109965635738832,
+          "f1": 0.7236180904522613,
+          "sensitivity": 0.9863013698630136,
+          "specificity": 0.7522935779816514,
+          "precision": 0.5714285714285714,
+          "recall": 0.9863013698630136
+        }
+      ],
+      "slice_name": "子集[na_pool_vs_uc_e1]: (CD+IC+CRC) vs UC-E1(Montreal=1)"
+    },
+    "na_pool_vs_uc_e2": {
+      "description": "阴性=Type∈{CD,IC,CRC}；阳性=UC 且 Montreal=2（E2）；得分仍为 P(1)",
+      "n_samples": 293,
+      "true_class_counts": {
+        "0": 218,
+        "1": 75
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "positive_class": "1",
+      "metrics": {
+        "auc": 0.9374311926605505,
+        "auprc": 0.7989722581208332,
+        "acc": 0.8156996587030717,
+        "precision": 0.5813953488372093,
+        "recall": 1.0,
+        "f1": 0.7352941176470589
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            164,
+            54
+          ],
+          [
+            0,
+            75
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.9374311926605505,
+          "auprc": 0.7989722581208332,
+          "acc": 0.8156996587030717,
+          "f1": 0.7352941176470589,
+          "sensitivity": 1.0,
+          "specificity": 0.7522935779816514,
+          "precision": 0.5813953488372093,
+          "recall": 1.0
+        }
+      ],
+      "slice_name": "子集[na_pool_vs_uc_e2]: (CD+IC+CRC) vs UC-E2(Montreal=2)"
+    },
+    "na_pool_vs_uc_e3": {
+      "description": "阴性=Type∈{CD,IC,CRC}；阳性=UC 且 Montreal=3（E3）；得分仍为 P(1)",
+      "n_samples": 297,
+      "true_class_counts": {
+        "0": 218,
+        "1": 79
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "positive_class": "1",
+      "metrics": {
+        "auc": 0.8918824759029149,
+        "auprc": 0.6998194601186968,
+        "acc": 0.797979797979798,
+        "precision": 0.5748031496062992,
+        "recall": 0.9240506329113924,
+        "f1": 0.7087378640776699
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            164,
+            54
+          ],
+          [
+            6,
+            73
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.8918824759029149,
+          "auprc": 0.6998194601186968,
+          "acc": 0.797979797979798,
+          "f1": 0.7087378640776699,
+          "sensitivity": 0.9240506329113924,
+          "specificity": 0.7522935779816514,
+          "precision": 0.5748031496062992,
+          "recall": 0.9240506329113924
+        }
+      ],
+      "slice_name": "子集[na_pool_vs_uc_e3]: (CD+IC+CRC) vs UC-E3(Montreal=3)"
+    }
+  },
+  "type_montreal_slices_meta": {
+    "type_col": "Type",
+    "montreal_col": "Montreal",
+    "summary_csv": "F:\\KeTi\\Project\\TCM\\output\\Stage2\\6_run_20260707_111716\\external_validation_binary\\type_montreal_slices\\type_montreal_slices_summary.csv",
+    "predictions_glob": "F:\\KeTi\\Project\\TCM\\output\\Stage2\\6_run_20260707_111716\\external_validation_binary\\type_montreal_slices\\predictions_*.csv"
+  }
+}

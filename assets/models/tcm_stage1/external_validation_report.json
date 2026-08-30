@@ -1,0 +1,1049 @@
+{
+  "task": "stage1_binary",
+  "model_run_dir": "F:\\KeTi\\Project\\TCM\\output\\Stage1\\6_run_20260708_052605",
+  "external_csv": "F:\\KeTi\\Project\\TCM\\data\\ATest-Stage1.csv",
+  "label_col": "Disease",
+  "type_mapping": {
+    "IE_IBS_Disease_0": [
+      "FDIBS",
+      "IE"
+    ],
+    "INFLAM_Disease_1": [
+      "CD",
+      "CRC",
+      "IC",
+      "UC"
+    ]
+  },
+  "class_names": [
+    "0",
+    "1"
+  ],
+  "positive_score": "prob_1 (UC+CD+IC+CRC 组)",
+  "overall": {
+    "name": "全验证集",
+    "n_samples": 597,
+    "true_class_counts": {
+      "0": 159,
+      "1": 438
+    },
+    "classes_present": [
+      "0",
+      "1"
+    ],
+    "threshold": 0.5,
+    "score_column": "prob_1",
+    "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+    "metrics": {
+      "auc": 0.8568105453605583,
+      "auprc": 0.917974769522282,
+      "acc": 0.8542713567839196,
+      "precision": 0.8806941431670282,
+      "recall": 0.9269406392694064,
+      "f1": 0.9032258064516129
+    },
+    "confusion_matrix": {
+      "matrix": [
+        [
+          104,
+          55
+        ],
+        [
+          32,
+          406
+        ]
+      ],
+      "rows": [
+        "true_0",
+        "true_1"
+      ],
+      "cols": [
+        "pred_0",
+        "pred_1"
+      ]
+    },
+    "pairwise_binary": [
+      {
+        "pair": "0_vs_1",
+        "auc": 0.8568105453605583,
+        "auprc": 0.917974769522282,
+        "acc": 0.8542713567839196,
+        "f1": 0.9032258064516129,
+        "sensitivity": 0.9269406392694064,
+        "specificity": 0.6540880503144654,
+        "precision": 0.8806941431670282,
+        "recall": 0.9269406392694064
+      }
+    ]
+  },
+  "by_source": {
+    "SanFu": {
+      "name": "Source=SanFu",
+      "n_samples": 299,
+      "true_class_counts": {
+        "0": 90,
+        "1": 209
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "metrics": {
+        "auc": 0.851993620414673,
+        "auprc": 0.9156554948670454,
+        "acc": 0.8193979933110368,
+        "precision": 0.8414096916299559,
+        "recall": 0.9138755980861244,
+        "f1": 0.8761467889908257
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            54,
+            36
+          ],
+          [
+            18,
+            191
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.851993620414673,
+          "auprc": 0.9156554948670454,
+          "acc": 0.8193979933110368,
+          "f1": 0.8761467889908257,
+          "sensitivity": 0.9138755980861244,
+          "specificity": 0.6,
+          "precision": 0.8414096916299559,
+          "recall": 0.9138755980861244
+        }
+      ]
+    },
+    "YanTai": {
+      "name": "Source=YanTai",
+      "n_samples": 298,
+      "true_class_counts": {
+        "0": 69,
+        "1": 229
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "metrics": {
+        "auc": 0.851528384279476,
+        "auprc": 0.9166965430764155,
+        "acc": 0.889261744966443,
+        "precision": 0.9188034188034188,
+        "recall": 0.9388646288209607,
+        "f1": 0.9287257019438445
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            50,
+            19
+          ],
+          [
+            14,
+            215
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.851528384279476,
+          "auprc": 0.9166965430764155,
+          "acc": 0.889261744966443,
+          "f1": 0.9287257019438445,
+          "sensitivity": 0.9388646288209607,
+          "specificity": 0.7246376811594203,
+          "precision": 0.9188034188034188,
+          "recall": 0.9388646288209607
+        }
+      ]
+    }
+  },
+  "by_agerange": {
+    "0": {
+      "name": "Agerange=0",
+      "n_samples": 408,
+      "true_class_counts": {
+        "0": 119,
+        "1": 289
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "metrics": {
+        "auc": 0.8617661597510977,
+        "auprc": 0.9129280875143704,
+        "acc": 0.8504901960784313,
+        "precision": 0.88,
+        "recall": 0.9134948096885813,
+        "f1": 0.8964346349745331
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            83,
+            36
+          ],
+          [
+            25,
+            264
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.8617661597510977,
+          "auprc": 0.9129280875143704,
+          "acc": 0.8504901960784313,
+          "f1": 0.8964346349745331,
+          "sensitivity": 0.9134948096885813,
+          "specificity": 0.6974789915966386,
+          "precision": 0.88,
+          "recall": 0.9134948096885813
+        }
+      ]
+    },
+    "1": {
+      "name": "Agerange=1",
+      "n_samples": 189,
+      "true_class_counts": {
+        "0": 40,
+        "1": 149
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "metrics": {
+        "auc": 0.8515100671140939,
+        "auprc": 0.9368227316252324,
+        "acc": 0.8624338624338624,
+        "precision": 0.8819875776397516,
+        "recall": 0.9530201342281879,
+        "f1": 0.9161290322580645
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            21,
+            19
+          ],
+          [
+            7,
+            142
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.8515100671140939,
+          "auprc": 0.9368227316252324,
+          "acc": 0.8624338624338624,
+          "f1": 0.9161290322580645,
+          "sensitivity": 0.9530201342281879,
+          "specificity": 0.525,
+          "precision": 0.8819875776397516,
+          "recall": 0.9530201342281879
+        }
+      ]
+    }
+  },
+  "type_slices": {
+    "type_only_uc": {
+      "description": "仅 UC 病例；期望 Disease=1（INFLAM_UC_CD_IC_CRC）",
+      "type": "UC",
+      "expected_disease": 1,
+      "n_type_disease_mismatch": 0,
+      "n_samples": 243,
+      "true_class_counts": {
+        "1": 243
+      },
+      "classes_present": [
+        "1"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "note": "仅含单一真实类别；AUC/AUPRC 不可用",
+      "metrics": {
+        "auc": NaN,
+        "auprc": NaN,
+        "acc": 0.9547325102880658,
+        "precision": 1.0,
+        "recall": 0.9547325102880658,
+        "f1": 0.9768421052631578
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            0,
+            0
+          ],
+          [
+            11,
+            232
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": NaN,
+          "auprc": NaN,
+          "acc": 0.9547325102880658,
+          "f1": 0.9768421052631578,
+          "sensitivity": 0.9547325102880658,
+          "specificity": NaN,
+          "precision": 1.0,
+          "recall": 0.9547325102880658
+        }
+      ]
+    },
+    "type_only_cd": {
+      "description": "仅 CD 病例；期望 Disease=1（INFLAM_UC_CD_IC_CRC）",
+      "type": "CD",
+      "expected_disease": 1,
+      "n_type_disease_mismatch": 0,
+      "n_samples": 46,
+      "true_class_counts": {
+        "1": 46
+      },
+      "classes_present": [
+        "1"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "note": "仅含单一真实类别；AUC/AUPRC 不可用",
+      "metrics": {
+        "auc": NaN,
+        "auprc": NaN,
+        "acc": 0.6739130434782609,
+        "precision": 1.0,
+        "recall": 0.6739130434782609,
+        "f1": 0.8051948051948052
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            0,
+            0
+          ],
+          [
+            15,
+            31
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": NaN,
+          "auprc": NaN,
+          "acc": 0.6739130434782609,
+          "f1": 0.8051948051948052,
+          "sensitivity": 0.6739130434782609,
+          "specificity": NaN,
+          "precision": 1.0,
+          "recall": 0.6739130434782609
+        }
+      ]
+    },
+    "type_only_ic": {
+      "description": "仅 IC 病例；期望 Disease=1（INFLAM_UC_CD_IC_CRC）",
+      "type": "IC",
+      "expected_disease": 1,
+      "n_type_disease_mismatch": 0,
+      "n_samples": 53,
+      "true_class_counts": {
+        "1": 53
+      },
+      "classes_present": [
+        "1"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "note": "仅含单一真实类别；AUC/AUPRC 不可用",
+      "metrics": {
+        "auc": NaN,
+        "auprc": NaN,
+        "acc": 0.9056603773584906,
+        "precision": 1.0,
+        "recall": 0.9056603773584906,
+        "f1": 0.9504950495049505
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            0,
+            0
+          ],
+          [
+            5,
+            48
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": NaN,
+          "auprc": NaN,
+          "acc": 0.9056603773584906,
+          "f1": 0.9504950495049505,
+          "sensitivity": 0.9056603773584906,
+          "specificity": NaN,
+          "precision": 1.0,
+          "recall": 0.9056603773584906
+        }
+      ]
+    },
+    "type_only_ie": {
+      "description": "仅 IE 病例；期望 Disease=0（IE_IBS）",
+      "type": "IE",
+      "expected_disease": 0,
+      "n_type_disease_mismatch": 0,
+      "n_samples": 67,
+      "true_class_counts": {
+        "0": 67
+      },
+      "classes_present": [
+        "0"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "note": "仅含单一真实类别；AUC/AUPRC 不可用",
+      "metrics": {
+        "auc": NaN,
+        "auprc": NaN,
+        "acc": 0.6716417910447762,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            45,
+            22
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": NaN,
+          "auprc": NaN,
+          "acc": 0.6716417910447762,
+          "f1": 0.0,
+          "sensitivity": NaN,
+          "specificity": 0.6716417910447762,
+          "precision": 0.0,
+          "recall": 0.0
+        }
+      ]
+    },
+    "type_only_crc": {
+      "description": "仅 CRC 病例；期望 Disease=1（INFLAM_UC_CD_IC_CRC）",
+      "type": "CRC",
+      "expected_disease": 1,
+      "n_type_disease_mismatch": 0,
+      "n_samples": 96,
+      "true_class_counts": {
+        "1": 96
+      },
+      "classes_present": [
+        "1"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "note": "仅含单一真实类别；AUC/AUPRC 不可用",
+      "metrics": {
+        "auc": NaN,
+        "auprc": NaN,
+        "acc": 0.9895833333333334,
+        "precision": 1.0,
+        "recall": 0.9895833333333334,
+        "f1": 0.9947643979057592
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            95
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": NaN,
+          "auprc": NaN,
+          "acc": 0.9895833333333334,
+          "f1": 0.9947643979057592,
+          "sensitivity": 0.9895833333333334,
+          "specificity": NaN,
+          "precision": 1.0,
+          "recall": 0.9895833333333334
+        }
+      ]
+    },
+    "type_only_fdibs": {
+      "description": "仅 FDIBS 病例；期望 Disease=0（IE_IBS）",
+      "type": "FDIBS",
+      "expected_disease": 0,
+      "n_type_disease_mismatch": 0,
+      "n_samples": 92,
+      "true_class_counts": {
+        "0": 92
+      },
+      "classes_present": [
+        "0"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "note": "仅含单一真实类别；AUC/AUPRC 不可用",
+      "metrics": {
+        "auc": NaN,
+        "auprc": NaN,
+        "acc": 0.6413043478260869,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            59,
+            33
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": NaN,
+          "auprc": NaN,
+          "acc": 0.6413043478260869,
+          "f1": 0.0,
+          "sensitivity": NaN,
+          "specificity": 0.6413043478260869,
+          "precision": 0.0,
+          "recall": 0.0
+        }
+      ]
+    },
+    "cd_vs_ie_ibs_pool": {
+      "description": "Type=CD vs Type∈{IE,FDIBS}，金标准=Disease",
+      "n_samples": 205,
+      "true_class_counts": {
+        "0": 159,
+        "1": 46
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "metrics": {
+        "auc": 0.6859447634673229,
+        "auprc": 0.30302671662127206,
+        "acc": 0.6585365853658537,
+        "precision": 0.36046511627906974,
+        "recall": 0.6739130434782609,
+        "f1": 0.4696969696969697
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            104,
+            55
+          ],
+          [
+            15,
+            31
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.6859447634673229,
+          "auprc": 0.30302671662127206,
+          "acc": 0.6585365853658537,
+          "f1": 0.4696969696969697,
+          "sensitivity": 0.6739130434782609,
+          "specificity": 0.6540880503144654,
+          "precision": 0.36046511627906974,
+          "recall": 0.6739130434782609
+        }
+      ]
+    },
+    "crc_vs_ie_ibs_pool": {
+      "description": "Type=CRC vs Type∈{IE,FDIBS}，金标准=Disease",
+      "n_samples": 255,
+      "true_class_counts": {
+        "0": 159,
+        "1": 96
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "metrics": {
+        "auc": 0.8911163522012578,
+        "auprc": 0.7042673881528391,
+        "acc": 0.7803921568627451,
+        "precision": 0.6333333333333333,
+        "recall": 0.9895833333333334,
+        "f1": 0.7723577235772358
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            104,
+            55
+          ],
+          [
+            1,
+            95
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.8911163522012578,
+          "auprc": 0.7042673881528391,
+          "acc": 0.7803921568627451,
+          "f1": 0.7723577235772358,
+          "sensitivity": 0.9895833333333334,
+          "specificity": 0.6540880503144654,
+          "precision": 0.6333333333333333,
+          "recall": 0.9895833333333334
+        }
+      ]
+    },
+    "ic_vs_ie_ibs_pool": {
+      "description": "Type=IC vs Type∈{IE,FDIBS}，金标准=Disease",
+      "n_samples": 212,
+      "true_class_counts": {
+        "0": 159,
+        "1": 53
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "metrics": {
+        "auc": 0.7840275305565445,
+        "auprc": 0.41110027477204353,
+        "acc": 0.7169811320754716,
+        "precision": 0.46601941747572817,
+        "recall": 0.9056603773584906,
+        "f1": 0.6153846153846154
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            104,
+            55
+          ],
+          [
+            5,
+            48
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.7840275305565445,
+          "auprc": 0.41110027477204353,
+          "acc": 0.7169811320754716,
+          "f1": 0.6153846153846154,
+          "sensitivity": 0.9056603773584906,
+          "specificity": 0.6540880503144654,
+          "precision": 0.46601941747572817,
+          "recall": 0.9056603773584906
+        }
+      ]
+    },
+    "uc_vs_ie_ibs_pool": {
+      "description": "Type=UC vs Type∈{IE,FDIBS}，金标准=Disease",
+      "n_samples": 402,
+      "true_class_counts": {
+        "0": 159,
+        "1": 243
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "metrics": {
+        "auc": 0.8914770815539509,
+        "auprc": 0.9006778335485498,
+        "acc": 0.835820895522388,
+        "precision": 0.8083623693379791,
+        "recall": 0.9547325102880658,
+        "f1": 0.8754716981132076
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            104,
+            55
+          ],
+          [
+            11,
+            232
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.8914770815539509,
+          "auprc": 0.9006778335485498,
+          "acc": 0.835820895522388,
+          "f1": 0.8754716981132076,
+          "sensitivity": 0.9547325102880658,
+          "specificity": 0.6540880503144654,
+          "precision": 0.8083623693379791,
+          "recall": 0.9547325102880658
+        }
+      ]
+    },
+    "fdibs_vs_inflam_pool": {
+      "description": "Type=FDIBS vs Type∈{UC,CD,IC,CRC}",
+      "n_samples": 530,
+      "true_class_counts": {
+        "0": 92,
+        "1": 438
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "metrics": {
+        "auc": 0.860730593607306,
+        "auprc": 0.9546688280142996,
+        "acc": 0.8773584905660378,
+        "precision": 0.9248291571753986,
+        "recall": 0.9269406392694064,
+        "f1": 0.9258836944127709
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            59,
+            33
+          ],
+          [
+            32,
+            406
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.860730593607306,
+          "auprc": 0.9546688280142996,
+          "acc": 0.8773584905660378,
+          "f1": 0.9258836944127709,
+          "sensitivity": 0.9269406392694064,
+          "specificity": 0.6413043478260869,
+          "precision": 0.9248291571753986,
+          "recall": 0.9269406392694064
+        }
+      ]
+    },
+    "ie_vs_inflam_pool": {
+      "description": "Type=IE vs Type∈{UC,CD,IC,CRC}",
+      "n_samples": 505,
+      "true_class_counts": {
+        "0": 67,
+        "1": 438
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "metrics": {
+        "auc": 0.8514277925441287,
+        "auprc": 0.9593800627218229,
+        "acc": 0.8930693069306931,
+        "precision": 0.9485981308411215,
+        "recall": 0.9269406392694064,
+        "f1": 0.9376443418013857
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            45,
+            22
+          ],
+          [
+            32,
+            406
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.8514277925441287,
+          "auprc": 0.9593800627218229,
+          "acc": 0.8930693069306931,
+          "f1": 0.9376443418013857,
+          "sensitivity": 0.9269406392694064,
+          "specificity": 0.6716417910447762,
+          "precision": 0.9485981308411215,
+          "recall": 0.9269406392694064
+        }
+      ]
+    },
+    "ie_ibs_pool_vs_inflam_pool": {
+      "description": "两训练臂在外部集上的总体对照",
+      "n_samples": 597,
+      "true_class_counts": {
+        "0": 159,
+        "1": 438
+      },
+      "classes_present": [
+        "0",
+        "1"
+      ],
+      "threshold": 0.5,
+      "score_column": "prob_1",
+      "score_meaning": "P(1) = P(UC+CD+IC+CRC 组)",
+      "metrics": {
+        "auc": 0.8568105453605583,
+        "auprc": 0.917974769522282,
+        "acc": 0.8542713567839196,
+        "precision": 0.8806941431670282,
+        "recall": 0.9269406392694064,
+        "f1": 0.9032258064516129
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            104,
+            55
+          ],
+          [
+            32,
+            406
+          ]
+        ],
+        "rows": [
+          "true_0",
+          "true_1"
+        ],
+        "cols": [
+          "pred_0",
+          "pred_1"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "0_vs_1",
+          "auc": 0.8568105453605583,
+          "auprc": 0.917974769522282,
+          "acc": 0.8542713567839196,
+          "f1": 0.9032258064516129,
+          "sensitivity": 0.9269406392694064,
+          "specificity": 0.6540880503144654,
+          "precision": 0.8806941431670282,
+          "recall": 0.9269406392694064
+        }
+      ]
+    }
+  }
+}

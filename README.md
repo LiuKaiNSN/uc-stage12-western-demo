@@ -51,6 +51,35 @@ python F:/KeTi/Project/Script_web/deploy/build_stage12_western_cloud.py
 - Stage 1: `3_run_20260707_142952` (LightGBM)
 - Stage 2: `4_run_20260707_030540` (CatBoost)
 
+## Paper 2 Hub (Baseline Model | TCM Integrated Model)
+
+**Separate Streamlit Cloud app** — does **not** replace the Paper 1 entry above.
+
+| Item | Value |
+|------|--------|
+| Main file | **`streamlit_app_hub.py`** |
+| Suggested Cloud app name | `uc-stage12-western-tcm-hub` |
+| Local preview | `run_hub_local.bat` (port **8511**) |
+
+Hub sidebar modules:
+
+1. **Baseline Model (Stage 1–2)** — same locked LightGBM / CatBoost as Paper 1  
+2. **TCM Integrated Model (Stage 1–2)** — RF models with TCM encodings  
+
+Paper 1 URL / `streamlit_app.py` are **intentionally unchanged**.
+
+Local Hub:
+
+```bash
+streamlit run streamlit_app_hub.py --server.port 8511
+```
+
+Rebuild TCM assets into this repo (maintainers):
+
+```bash
+python F:/KeTi/Project/Script_web/deploy/build_stage12_hub_assets.py
+```
+
 ## License
 
 MIT — see [LICENSE](LICENSE).

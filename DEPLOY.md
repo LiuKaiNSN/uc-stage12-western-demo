@@ -126,3 +126,58 @@ A: 确认 `assets/figures/stage1|stage2/` 已上传且含 `external_shap_*.jpg` 
 
 **Q: 想暂时去掉 SHAP/PDP 减小体积**  
 A: 在 `western_stage12.yaml` 中删除 `figures.stage_publication` 整块即可（需重新 commit）。
+
+---
+
+## Paper 2 — Hub（第二篇：Baseline | TCM Integrated）
+
+**红线：不要改动第一个 Cloud App 的 Main file（保持 `streamlit_app.py`）。**
+
+### 本地预览 Hub
+
+```powershell
+cd F:\KeTi\Project\deploy\uc-stage12-western-demo
+.\run_hub_local.bat
+# 或
+F:\KeTi\Project\.venv\Scripts\streamlit.exe run streamlit_app_hub.py --server.port 8511
+```
+
+检查：侧边栏可切换 **Baseline Model** / **TCM Integrated Model**；各含 Stage1/2、SHAP/PDP。
+
+### 推送增量（同仓库）
+
+```bash
+cd F:/KeTi/Project/deploy/uc-stage12-western-demo
+git lfs install
+git add streamlit_app_hub.py run_hub_local.bat
+git add stage12_baseline stage12_tcm
+git add assets/models/tcm_stage1 assets/models/tcm_stage2
+git add assets/figures/tcm_stage1 assets/figures/tcm_stage2
+git add README.md DEPLOY.md
+# 确认未误改 Paper 1：
+git diff -- streamlit_app.py
+git commit -m "Add Paper 2 hub: Baseline Model + TCM Integrated Model (Stage 1-2)"
+git push origin main
+```
+
+新增 TCM 两个 `.joblib` 合计约 **500 MB**，必须走 **Git LFS**。
+
+### 新建第二个 Streamlit Cloud App
+
+1. https://share.streamlit.io → **New app**（不要编辑第一个 App）  
+2. Repository: `LiuKaiNSN/uc-stage12-western-demo`  
+3. Branch: `main`  
+4. **Main file path: `streamlit_app_hub.py`**  
+5. App URL (optional): `uc-stage12-western-tcm-hub`  
+6. Deploy → 得到第二篇论文用的新链接  
+
+### Hub 模型版本
+
+| Module | Stage1 | Stage2 |
+|--------|--------|--------|
+| Baseline Model | LightGBM `3_run_20260707_142952`, thr 0.34 | CatBoost `4_run_20260707_030540`, thr 0.51 |
+| TCM Integrated | RF `6_run_20260708_052605`, thr 0.43 | RF `6_run_20260707_111716`, thr 0.53 |
+
+### 第二篇 Availability（英文草稿）
+
+> An interactive research hub comparing the Baseline Model and the TCM Integrated Model for pre-endoscopic Stage 1–2 triage is available at **[HUB URL]**. The Paper 1 Baseline-only demonstration remains at **[PAPER1 URL]**. User inputs are not stored.

@@ -1,0 +1,13 @@
+Age
+CRP
+FC
+LinBaJiShu
+NianYe
+PCT
+PaiBianPinLv
+TCM_Syn_damp_heat
+TCM_Syn_spleen_kidney_yang
+TCM_Syn_toxic_heat
+XiaoShou
+BianZhi
+LiJiHouZhong

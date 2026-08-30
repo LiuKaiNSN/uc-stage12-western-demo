@@ -1,0 +1,70 @@
+# Hub-only Baseline Model config (Paper 2). Paper 1 keeps stage12_western/.
+project_root: "."
+profile_id: "stage12_baseline"
+display_name: "Baseline Model — Stage 1 & 2"
+
+paths:
+  web_output: "assets/metrics"
+
+stages:
+  stage1:
+    key: "stage1"
+    tab_title: "Stage 1 — IE/FDIBS vs Organic"
+    display_name: "Stage 1: Pre-endoscopic organic disease triage (Baseline Model)"
+    run_dir: "assets/models/stage1"
+    model_file: "final_model.joblib"
+    features_file: "final_features_used.txt"
+    operating_point: "assets/models/stage1/operating_point.csv"
+    external_report: "assets/models/stage1/external_validation_report.json"
+    positive_label: "Organic colorectal disease (UC/CD/IC/CRC)"
+    negative_label: "IE–FDIBS spectrum"
+    probability_label: "P(Organic disease)"
+    refer_message: "Referral flag: organic disease work-up suggested (assist endoscopy decision)."
+    no_refer_message: "Referral flag: below organic-disease referral criterion."
+
+  stage2:
+    key: "stage2"
+    tab_title: "Stage 2 — UC vs Other organic"
+    display_name: "Stage 2: Pre-endoscopic UC-specific discrimination (Baseline Model)"
+    run_dir: "assets/models/stage2"
+    model_file: "final_model.joblib"
+    features_file: "final_features_used.txt"
+    operating_point: "assets/models/stage2/operating_point.csv"
+    external_report: "assets/models/stage2/external_validation_report.json"
+    positive_label: "Ulcerative colitis (UC)"
+    negative_label: "Other organic (CD/IC/CRC)"
+    probability_label: "P(UC)"
+    refer_message: "Referral flag: UC pathway tendency (assist endoscopic differential diagnosis)."
+    no_refer_message: "Referral flag: below UC referral criterion."
+
+figures:
+  pdp_top_k: 5
+  stage_publication:
+    stage1:
+      beeswarm: "assets/figures/stage1/external_shap_beeswarm_combined"
+      beeswarm_caption: "SHAP beeswarm (external validation) / 外验 SHAP 蜂群图"
+      enlarge: "assets/figures/stage1/external_shap_importance_correlation"
+      enlarge_caption: "SHAP importance & correlation (external validation) / 外验 SHAP 重要性与相关"
+      pdp_dir: "assets/figures/stage1"
+    stage2:
+      beeswarm: "assets/figures/stage2/external_shap_beeswarm_combined"
+      beeswarm_caption: "SHAP beeswarm (external validation) / 外验 SHAP 蜂群图"
+      enlarge: "assets/figures/stage2/external_shap_importance_correlation"
+      enlarge_caption: "SHAP importance & correlation (external validation) / 外验 SHAP 重要性与相关"
+      pdp_dir: "assets/figures/stage2"
+
+stage1_skip_note:
+  zh: "若基本确定已排除感染性肠炎和功能性腹泻/IBS，可直接跳转至 Stage 2 标签页进行 UC 定向鉴别。"
+  en: "If infectious enteritis and functional diarrhea/IBS have been reasonably excluded, proceed to Stage 2 for UC-specific discrimination."
+
+disclaimer:
+  en: >
+    Research-only inference prototype for academic demonstration and peer review.
+    Baseline Model uses symptoms, signs, and laboratory tests to assist pre-endoscopic
+    decision-making; endoscopy and histopathology retain priority. Not for commercial
+    or standalone clinical use. User inputs are not stored or logged. Stage 1 and Stage 2
+    were externally validated separately (W2); this tool does not implement a probability cascade.
+  zh: >
+    仅供科研演示与同行评议的推理工具。基线模型（Baseline Model）基于症状、体征及实验室检查
+    辅助内镜前决策；内镜检查及病理学检查仍具优先地位。不得用于商业或独立临床诊断。
+    用户输入不作存储。Stage 1 与 Stage 2 在外部验证队列上分段评估（W2），非概率级联传递。

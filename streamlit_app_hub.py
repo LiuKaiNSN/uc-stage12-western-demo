@@ -15,9 +15,8 @@ if str(REPO_ROOT) not in sys.path:
 
 import streamlit as st
 
-from src.artifacts import validate_config
+from src.artifacts import load_stage_artifacts, validate_config
 from src.config_loader import load_config
-from src.inference import load_both_stages
 from src.ui.western_stage12 import render_western_stage12
 
 MODULES = {
@@ -61,7 +60,7 @@ cfg = load_config(name=entry["config"], profile=entry["profile"])
 
 with st.sidebar:
     st.markdown(f"**Active:** {entry['title_en']}")
-    with st.expander("Disclaimer / 免责声明", expanded=True):
+    with st.expander("Disclaimer / 免责声明", expanded=False):
         st.markdown(cfg["disclaimer"]["en"])
         st.markdown(cfg["disclaimer"]["zh"])
 
@@ -71,13 +70,23 @@ if errors:
     st.stop()
 
 
-@st.cache_resource(show_spinner="Loading models… / 正在加载模型…")
-def _load(profile: str, config_name: str):
+@st.cache_resource(show_spinner=False, max_entries=2)
+def _load_stage(profile: str, config_name: str, stage_key: str):
+    """Cache at most two stage pipelines (current module Stage1/Stage2)."""
     loaded = load_config(name=config_name, profile=profile)
-    return load_both_stages(loaded), loaded
+    return load_stage_artifacts(loaded, stage_key)
 
 
-artifacts_map, active_cfg = _load(entry["profile"], entry["config"])
+# Switching Baseline ↔ TCM: drop previous module models from memory.
+prev_profile = st.session_state.get("hub_active_profile")
+if prev_profile is not None and prev_profile != entry["profile"]:
+    _load_stage.clear()
+st.session_state.hub_active_profile = entry["profile"]
+
+
+def _load_active_stage(stage_key: str):
+    return _load_stage(entry["profile"], entry["config"], stage_key)
+
 
 st.header(entry["title_en"])
 st.header(entry["title_zh"])
@@ -88,4 +97,4 @@ st.markdown(
     "**阶段分段外验（W2），非概率级联。**"
 )
 
-render_western_stage12(active_cfg, artifacts_map)
+render_western_stage12(cfg, _load_active_stage)

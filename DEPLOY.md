@@ -71,10 +71,10 @@ git push -u origin main
 ## Step 3 — 验证清单
 
 - [ ] 首页无 “Startup validation failed”  
-- [ ] Stage 1 / Stage 2 两个 Tab 均可输入并出概率  
+- [ ] 顶部 Stage 1 / Stage 2 单选切换后均可输入并出概率（按需加载模型）  
 - [ ] 右侧显示外验 AUC 等指标  
-- [ ] SHAP 蜂群图 + rank01–05 PDP 能显示  
-- [ ] 底部 enlarged SHAP correlation 图能显示  
+- [ ] 打开 “Show SHAP / beeswarm / PDP” 开关后，蜂群图与 PDP 能显示  
+- [ ] （可选）展开全宽相关图能显示  
 
 本地可先测：
 
@@ -115,6 +115,13 @@ python F:\KeTi\Project\Script_web\deploy\build_stage12_western_cloud.py
 | 2 | CatBoost | 4_run_20260707_030540 | 0.51 | 459 |
 
 ---
+
+## 内存瘦身（Paper 1 + Hub 共用）
+
+两个 Cloud App 已改为：按阶段懒加载模型、切换 Hub 模块时清空另一套缓存、解释性图默认不加载。推送代码后请对**两个 App 各 Reboot 一次**。公开 URL / Main file **不要改**。
+
+**Q: Your app has gone over its resource limits**  
+A: 先在 https://share.streamlit.io 对该 App 点 ⋮ → **Reboot**；若反复出现，确认已部署上述懒加载版本。
 
 ## 常见问题
 

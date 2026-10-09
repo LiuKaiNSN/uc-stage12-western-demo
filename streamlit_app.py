@@ -11,9 +11,8 @@ if str(REPO_ROOT) not in sys.path:
 
 import streamlit as st
 
-from src.artifacts import validate_config
+from src.artifacts import load_stage_artifacts, validate_config
 from src.config_loader import load_config
-from src.inference import load_both_stages
 from src.ui.western_stage12 import render_western_stage12
 
 PROFILE = "stage12_western"
@@ -32,7 +31,7 @@ with st.sidebar:
     st.caption(cfg.get("display_name", ""))
     st.markdown("**Pre-endoscopic decision support / 内镜前辅助决策**")
     st.divider()
-    with st.expander("Disclaimer / 免责声明", expanded=True):
+    with st.expander("Disclaimer / 免责声明", expanded=False):
         st.markdown(cfg["disclaimer"]["en"])
         st.markdown(cfg["disclaimer"]["zh"])
 
@@ -42,12 +41,11 @@ if errors:
     st.stop()
 
 
-@st.cache_resource(show_spinner="Loading models… / 正在加载模型…")
-def _load():
-    return load_both_stages(cfg)
+@st.cache_resource(show_spinner=False)
+def _load_stage(stage_key: str):
+    """Load one stage pipeline; Stage 2 stays unloaded until selected."""
+    return load_stage_artifacts(cfg, stage_key)
 
-
-artifacts_map = _load()
 
 st.header("UC Multistage Pre-endoscopic Triage — Western Models")
 st.header("溃疡性结肠炎序贯内镜前分流 — 西医客观指标模型")
@@ -58,4 +56,4 @@ st.markdown(
     "**阶段分段外验（W2），非概率级联。**"
 )
 
-render_western_stage12(cfg, artifacts_map)
+render_western_stage12(cfg, _load_stage)

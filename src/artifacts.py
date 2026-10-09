@@ -162,6 +162,21 @@ def load_multiclass_artifacts(cfg: dict) -> MulticlassStageArtifacts:
     )
 
 
+def _validate_binary_stage_paths(cfg: dict, stage_key: str) -> None:
+    """Check artifact files exist without joblib-loading models (saves Cloud RAM)."""
+    stage_cfg = cfg["stages"][stage_key]
+    run_dir = resolve_project_path(cfg, stage_cfg["run_dir"])
+    paths = (
+        run_dir / stage_cfg["model_file"],
+        run_dir / stage_cfg["features_file"],
+        resolve_project_path(cfg, stage_cfg["operating_point"]),
+        resolve_project_path(cfg, stage_cfg["external_report"]),
+    )
+    for p in paths:
+        if not p.exists():
+            raise FileNotFoundError(f"Missing artifact: {p}")
+
+
 def validate_config(cfg: dict) -> List[str]:
     profile = str(cfg.get("profile_id", ""))
     errors: List[str] = []
@@ -172,11 +187,12 @@ def validate_config(cfg: dict) -> List[str]:
             errors.append(f"model: {exc}")
         return errors
 
+    # Path checks only — do not load Stage1+Stage2 pipelines at startup.
     for stage_key in ("stage1", "stage2"):
         if stage_key not in cfg.get("stages", {}):
             continue
         try:
-            load_stage_artifacts(cfg, stage_key)
+            _validate_binary_stage_paths(cfg, stage_key)
         except Exception as exc:  # noqa: BLE001
             errors.append(f"{stage_key}: {exc}")
     return errors

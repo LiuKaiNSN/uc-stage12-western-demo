@@ -80,6 +80,38 @@ Rebuild TCM assets into this repo (maintainers):
 python F:/KeTi/Project/Script_web/deploy/build_stage12_hub_assets.py
 ```
 
+## Thesis Chapter 4 — Full system (Stage 1–3 × Baseline | TCM)
+
+**Third Streamlit Cloud app** — does **not** replace Paper 1 or Paper 2 SCI URLs.
+
+| Item | Value |
+|------|--------|
+| Main file | **`streamlit_app_full.py`** |
+| Suggested Cloud app name | `uc-stage123-full-assist` |
+| Local preview | `run_full_local.bat` (port **8512**) |
+
+Sidebar:
+
+1. **Baseline Model** or **TCM Integrated Model**  
+2. **Stage 1 / Stage 2 / Stage 3** (Montreal E1–E3)
+
+Thesis-locked Stage 3:
+
+- Baseline: XGBoost `1_run_20260610_211647` (E3 thr ≈ 0.35)  
+- TCM Integrated: CatBoost `4_run_20260611_192747` (E3 thr ≈ 0.29)
+
+Local:
+
+```bash
+streamlit run streamlit_app_full.py --server.port 8512
+```
+
+Rebuild Stage 3 assets (maintainers):
+
+```bash
+python F:/KeTi/Project/Script_web/deploy/build_stage3_full_assets.py
+```
+
 ## Analysis code (journals)
 
 | Paper | Folder | Scope |

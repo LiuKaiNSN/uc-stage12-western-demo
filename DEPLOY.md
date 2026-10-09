@@ -136,6 +136,31 @@ A: 在 `western_stage12.yaml` 中删除 `figures.stage_publication` 整块即可
 
 ---
 
+## 博士论文第四章 — 全模型 App（Stage 1–3 × Baseline | TCM）
+
+**红线：不要改动 Paper 1 / Paper 2 的 Cloud App（SCI 链接）。另建第三个 App。**
+
+| 字段 | 值 |
+|------|-----|
+| Main file path | **`streamlit_app_full.py`** |
+| 建议 App 名 | `uc-stage123-full-assist` |
+| 本地 | `run_full_local.bat`（端口 **8512**） |
+
+Stage 3 论文锁定：
+
+- 西医 Baseline：XGBoost `outputs/Stage3/1_run_20260610_211647`，E3≈0.35  
+- 中西医 TCM：CatBoost `TCM/output/Stage3/4_run_20260611_192747`，E3≈0.29  
+
+打包 Stage3 资产：
+
+```powershell
+python F:\KeTi\Project\Script_web\deploy\build_stage3_full_assets.py
+```
+
+推送后需 **Git LFS**（新增 Stage3 `.joblib`）。新建 Cloud App → Main file = `streamlit_app_full.py` → Deploy。第四章只写这个新 URL。
+
+---
+
 ## Paper 2 — Hub（第二篇：Baseline | TCM Integrated）
 
 **红线：不要改动第一个 Cloud App 的 Main file（保持 `streamlit_app.py`）。**

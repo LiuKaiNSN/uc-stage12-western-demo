@@ -177,12 +177,27 @@ def _validate_binary_stage_paths(cfg: dict, stage_key: str) -> None:
             raise FileNotFoundError(f"Missing artifact: {p}")
 
 
+def _validate_multiclass_paths(cfg: dict) -> None:
+    """Check Stage3 artifact files exist without joblib-loading the model."""
+    model_cfg = cfg["model"]
+    run_dir = resolve_project_path(cfg, model_cfg["run_dir"])
+    paths = (
+        run_dir / model_cfg["model_file"],
+        run_dir / model_cfg["features_file"],
+        resolve_project_path(cfg, model_cfg["operating_point"]),
+        resolve_project_path(cfg, model_cfg["external_report"]),
+    )
+    for p in paths:
+        if not p.exists():
+            raise FileNotFoundError(f"Missing artifact: {p}")
+
+
 def validate_config(cfg: dict) -> List[str]:
     profile = str(cfg.get("profile_id", ""))
     errors: List[str] = []
     if profile in ("stage3_western", "stage3_tcm"):
         try:
-            load_multiclass_artifacts(cfg)
+            _validate_multiclass_paths(cfg)
         except Exception as exc:  # noqa: BLE001
             errors.append(f"model: {exc}")
         return errors

@@ -1,0 +1,391 @@
+{
+  "model_run_dir": "F:\\KeTi\\Project\\outputs\\Stage3\\1_run_20260610_211647",
+  "external_csv": "F:\\KeTi\\Project\\Data\\ATest-Stage3.csv",
+  "id_col": "No",
+  "label_col": "Disease",
+  "source_col": "Source",
+  "agerange_col": "Agerange",
+  "n_features": 12,
+  "class_names": [
+    "1",
+    "2",
+    "3"
+  ],
+  "overall": {
+    "name": "全验证集",
+    "n_samples": 247,
+    "true_class_counts": {
+      "1": 79,
+      "2": 83,
+      "3": 85
+    },
+    "classes_present": [
+      "1",
+      "2",
+      "3"
+    ],
+    "metrics": {
+      "acc": 0.7125506072874493,
+      "balanced_acc": 0.7136333868609209,
+      "macro_f1": 0.7030956175867905,
+      "weighted_f1": 0.703512080086746,
+      "macro_precision": 0.7265995584409906,
+      "macro_recall": 0.7136333868609209,
+      "macro_auc_ovr": 0.8882994622932259
+    },
+    "confusion_matrix": {
+      "matrix": [
+        [
+          66,
+          5,
+          8
+        ],
+        [
+          29,
+          40,
+          14
+        ],
+        [
+          9,
+          6,
+          70
+        ]
+      ],
+      "rows": [
+        "true_1",
+        "true_2",
+        "true_3"
+      ],
+      "cols": [
+        "pred_1",
+        "pred_2",
+        "pred_3"
+      ]
+    },
+    "pairwise_binary": [
+      {
+        "pair": "1_vs_2",
+        "auc": 0.862742107671191,
+        "acc": 0.6851851851851852,
+        "f1": 0.5714285714285714,
+        "sensitivity": 0.40963855421686746,
+        "specificity": 0.9746835443037974
+      },
+      {
+        "pair": "1_vs_3",
+        "auc": 0.9408786299329859,
+        "acc": 0.8658536585365854,
+        "f1": 0.8607594936708861,
+        "sensitivity": 0.8,
+        "specificity": 0.9367088607594937
+      },
+      {
+        "pair": "2_vs_3",
+        "auc": 0.8890148830616584,
+        "acc": 0.8392857142857143,
+        "f1": 0.8343558282208589,
+        "sensitivity": 0.8,
+        "specificity": 0.8795180722891566
+      }
+    ]
+  },
+  "by_source": {
+    "SanFu": {
+      "name": "Source=SanFu",
+      "n_samples": 69,
+      "true_class_counts": {
+        "1": 15,
+        "2": 7,
+        "3": 47
+      },
+      "classes_present": [
+        "1",
+        "2",
+        "3"
+      ],
+      "metrics": {
+        "acc": 0.7536231884057971,
+        "balanced_acc": 0.7075987841945288,
+        "macro_f1": 0.6836956521739131,
+        "weighted_f1": 0.7565374921235035,
+        "macro_precision": 0.6666666666666666,
+        "macro_recall": 0.7075987841945288,
+        "macro_auc_ovr": 0.8721900913314015
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            9,
+            0,
+            6
+          ],
+          [
+            1,
+            5,
+            1
+          ],
+          [
+            5,
+            4,
+            38
+          ]
+        ],
+        "rows": [
+          "true_1",
+          "true_2",
+          "true_3"
+        ],
+        "cols": [
+          "pred_1",
+          "pred_2",
+          "pred_3"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "1_vs_2",
+          "auc": 0.9523809523809524,
+          "acc": 0.8636363636363636,
+          "f1": 0.7272727272727273,
+          "sensitivity": 0.5714285714285714,
+          "specificity": 1.0
+        },
+        {
+          "pair": "1_vs_3",
+          "auc": 0.8212765957446808,
+          "acc": 0.7580645161290323,
+          "f1": 0.8275862068965517,
+          "sensitivity": 0.7659574468085106,
+          "specificity": 0.7333333333333333
+        },
+        {
+          "pair": "2_vs_3",
+          "auc": 0.8936170212765957,
+          "acc": 0.7777777777777778,
+          "f1": 0.8571428571428571,
+          "sensitivity": 0.7659574468085106,
+          "specificity": 0.8571428571428571
+        }
+      ]
+    },
+    "YanTai": {
+      "name": "Source=YanTai",
+      "n_samples": 178,
+      "true_class_counts": {
+        "1": 64,
+        "2": 76,
+        "3": 38
+      },
+      "classes_present": [
+        "1",
+        "2",
+        "3"
+      ],
+      "metrics": {
+        "acc": 0.6966292134831461,
+        "balanced_acc": 0.7310855263157894,
+        "macro_f1": 0.6970865182231085,
+        "weighted_f1": 0.6819257583056075,
+        "macro_precision": 0.7182112784551227,
+        "macro_recall": 0.7310855263157894,
+        "macro_auc_ovr": 0.9006911426851442
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            57,
+            5,
+            2
+          ],
+          [
+            28,
+            35,
+            13
+          ],
+          [
+            4,
+            2,
+            32
+          ]
+        ],
+        "rows": [
+          "true_1",
+          "true_2",
+          "true_3"
+        ],
+        "cols": [
+          "pred_1",
+          "pred_2",
+          "pred_3"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "1_vs_2",
+          "auc": 0.8612253289473684,
+          "acc": 0.6571428571428571,
+          "f1": 0.5555555555555556,
+          "sensitivity": 0.39473684210526316,
+          "specificity": 0.96875
+        },
+        {
+          "pair": "1_vs_3",
+          "auc": 0.967516447368421,
+          "acc": 0.9313725490196079,
+          "f1": 0.9014084507042254,
+          "sensitivity": 0.8421052631578947,
+          "specificity": 0.984375
+        },
+        {
+          "pair": "2_vs_3",
+          "auc": 0.8957756232686981,
+          "acc": 0.868421052631579,
+          "f1": 0.810126582278481,
+          "sensitivity": 0.8421052631578947,
+          "specificity": 0.881578947368421
+        }
+      ]
+    }
+  },
+  "by_agerange": {
+    "0": {
+      "name": "Agerange=0",
+      "n_samples": 208,
+      "true_class_counts": {
+        "1": 79,
+        "2": 74,
+        "3": 55
+      },
+      "classes_present": [
+        "1",
+        "2",
+        "3"
+      ],
+      "metrics": {
+        "acc": 0.6971153846153846,
+        "balanced_acc": 0.7028053369825522,
+        "macro_f1": 0.6922988344695523,
+        "weighted_f1": 0.6875302900898631,
+        "macro_precision": 0.7258753791011857,
+        "macro_recall": 0.7028053369825522,
+        "macro_auc_ovr": 0.8784094704322566
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            66,
+            5,
+            8
+          ],
+          [
+            29,
+            35,
+            10
+          ],
+          [
+            9,
+            2,
+            44
+          ]
+        ],
+        "rows": [
+          "true_1",
+          "true_2",
+          "true_3"
+        ],
+        "cols": [
+          "pred_1",
+          "pred_2",
+          "pred_3"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "1_vs_2",
+          "auc": 0.8518645227505988,
+          "acc": 0.6993464052287581,
+          "f1": 0.5660377358490566,
+          "sensitivity": 0.40540540540540543,
+          "specificity": 0.9746835443037974
+        },
+        {
+          "pair": "1_vs_3",
+          "auc": 0.9295742232451093,
+          "acc": 0.8731343283582089,
+          "f1": 0.8349514563106796,
+          "sensitivity": 0.7818181818181819,
+          "specificity": 0.9367088607594937
+        },
+        {
+          "pair": "2_vs_3",
+          "auc": 0.8614250614250614,
+          "acc": 0.8527131782945736,
+          "f1": 0.819047619047619,
+          "sensitivity": 0.7818181818181819,
+          "specificity": 0.9054054054054054
+        }
+      ]
+    },
+    "1": {
+      "name": "Agerange=1",
+      "n_samples": 39,
+      "true_class_counts": {
+        "2": 9,
+        "3": 30
+      },
+      "classes_present": [
+        "2",
+        "3"
+      ],
+      "metrics": {
+        "acc": 0.7948717948717948,
+        "balanced_acc": 0.7111111111111111,
+        "macro_f1": 0.7111111111111111,
+        "weighted_f1": 0.7948717948717948,
+        "macro_precision": 0.7111111111111111,
+        "macro_recall": 0.7111111111111111,
+        "macro_auc_ovr": NaN
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            5,
+            4
+          ],
+          [
+            0,
+            4,
+            26
+          ]
+        ],
+        "rows": [
+          "true_1",
+          "true_2",
+          "true_3"
+        ],
+        "cols": [
+          "pred_1",
+          "pred_2",
+          "pred_3"
+        ]
+      },
+      "pairwise_binary": [
+        {
+          "pair": "2_vs_3",
+          "auc": 0.8962962962962963,
+          "acc": 0.7948717948717948,
+          "f1": 0.8620689655172413,
+          "sensitivity": 0.8333333333333334,
+          "specificity": 0.6666666666666666
+        }
+      ]
+    }
+  },
+  "pairwise_summary_note": "各 stratum 的 pairwise_binary 与阶段 A 的 pairwise_binary_metrics.csv 定义一致；汇总对比见 external_pairwise_summary_long.csv（长表）与 external_pairwise_summary_wide.csv（宽表，每行一对类别）。"
+}

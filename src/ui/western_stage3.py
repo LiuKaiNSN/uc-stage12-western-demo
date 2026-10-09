@@ -58,6 +58,10 @@ def render_multiclass_result(
 
     st.markdown("---")
     st.markdown("#### Extensive disease (E3) pathway / 广泛型（E3）路径")
+    st.caption(
+        f"E3 operating threshold / E3 工作点阈值: **{artifacts.e3_threshold:.2f}** "
+        "(prespecified on external DCA; separate from argmax class prediction)."
+    )
     st.metric("P(E3)", f"{result.e3_probability:.4f}")
     st.progress(min(max(result.e3_probability, 0.0), 1.0))
     if result.e3_refer:
@@ -68,30 +72,53 @@ def render_multiclass_result(
         st.markdown("**Flag / 标志:** No refer")
 
 
+def _fig_toggle_key(cfg: dict) -> str:
+    return f"show_figs_stage3_{config_profile(cfg)}"
+
+
 def render_figures_panel(cfg: dict) -> None:
     top_k = int(cfg.get("figures", {}).get("pdp_top_k", 5))
     st.subheader("Global explainability (static)")
-    st.caption("Publication figures (precomputed; not updated per input).")
+    st.caption(
+        "Publication figures (precomputed; not updated per input).  "
+        "Hidden by default to reduce Cloud memory use."
+    )
+
+    show = st.toggle(
+        "Show SHAP / beeswarm / PDP figures  |  显示解释性图（蜂群图 / PDP 等）",
+        value=False,
+        key=_fig_toggle_key(cfg),
+    )
+    if not show:
+        st.info(
+            "Figures are collapsed to save memory. Turn the switch on to view.  \n"
+            "默认折叠以节省内存；打开开关后可查看。"
+        )
+        return
 
     pub = list_publication_images(cfg)
-    for path, caption in pub:
-        st.image(str(path), caption=caption, use_container_width=True)
+    with st.expander("SHAP beeswarm / 蜂群图", expanded=True):
+        if not pub:
+            st.caption("No beeswarm figures found.")
+        for path, caption in pub:
+            st.image(str(path), caption=caption, use_container_width=True)
 
     pdp_images = list_publication_pdp_rank_images(cfg, top_k=top_k)
-    if pdp_images:
-        st.markdown("**Partial dependence (top 5 by SHAP rank)**")
+    with st.expander("Partial dependence (PDP) / 偏依赖图", expanded=False):
+        if not pdp_images:
+            st.caption("Top-5 PDP images not found.")
         for path, caption in pdp_images:
             st.image(str(path), caption=caption, use_container_width=True)
-    else:
-        st.caption("Top-5 PDP images not found under Figure/Stage3/figure3/.")
 
 
 def render_enlarged_correlation(cfg: dict) -> None:
+    if not st.session_state.get(_fig_toggle_key(cfg), False):
+        return
     enlarged = get_enlarged_image(cfg)
-    if enlarged:
-        path, caption = enlarged
-        st.markdown("---")
-        st.markdown(f"### {caption}")
+    if not enlarged:
+        return
+    path, caption = enlarged
+    with st.expander(f"{caption} (full width) / 全宽相关图", expanded=False):
         st.caption("Full-width view / 全宽显示便于阅读")
         st.image(str(path), use_container_width=True)
 
@@ -106,7 +133,7 @@ def render_western_stage3(cfg: dict, artifacts: MulticlassStageArtifacts) -> Non
         values, errors = feature_input_form(
             artifacts.feature_names,
             feature_meta,
-            form_key="form_stage3",
+            form_key=f"form_stage3_{profile}",
         )
         if errors:
             for err in errors:

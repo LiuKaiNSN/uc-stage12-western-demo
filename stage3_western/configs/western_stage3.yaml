@@ -1,0 +1,48 @@
+# Full-app cloud config — thesis-locked Western Stage3 (XGBoost run 1)
+project_root: "."
+profile_id: "stage3_western"
+display_name: "Baseline Model — Stage 3 Montreal Extent"
+
+paths:
+  web_output: "assets/metrics"
+
+model:
+  run_dir: "assets/models/stage3"
+  model_file: "final_model.joblib"
+  features_file: "final_features_used.txt"
+  operating_point: "assets/models/stage3/operating_point.csv"
+  external_report: "assets/models/stage3/external_validation_report.json"
+  display_name: "Stage 3: Montreal classification (E1 / E2 / E3) — Baseline Model"
+  e3_class_name: "3"
+  class_display:
+    "1":
+      zh: "E1 直肠型（Proctitis）"
+      en: "E1 Proctitis (limited to rectum)"
+    "2":
+      zh: "E2 左半结肠型（Left-sided）"
+      en: "E2 Left-sided (distal to splenic flexure)"
+    "3":
+      zh: "E3 广泛结肠型（Extensive）"
+      en: "E3 Extensive (beyond splenic flexure)"
+  e3_refer_message: "Referral flag: extensive disease (E3) pathway tendency."
+  e3_no_refer_message: "Referral flag: below extensive-disease (E3) referral criterion."
+
+figures:
+  pdp_top_k: 5
+  pdp_dir: "assets/figures/stage3"
+  enlarge_path: "assets/figures/stage3/shap_importance_correlation"
+  enlarge_caption: "SHAP importance & feature correlation (external validation)"
+  publication_images:
+    - path: "assets/figures/stage3/external_shap_beeswarm_combined"
+      caption: "SHAP beeswarm (external validation) / 外验 SHAP 蜂群图"
+
+disclaimer:
+  en: >
+    Research-only inference prototype for academic demonstration and thesis Chapter 4.
+    Baseline Stage 3 predicts Montreal extent (E1/E2/E3) from pre-endoscopic features;
+    endoscopy and histopathology retain priority. Not for commercial or standalone clinical use.
+    User inputs are not stored. Stages were externally validated separately; not a probability cascade.
+  zh: >
+    仅供科研演示与博士论文第四章系统展示。基线 Stage 3 基于内镜前特征预测 Montreal 病变范围
+    （E1/E2/E3）；内镜及病理学检查仍具优先地位。不得用于商业或独立临床诊断。用户输入不作存储。
+    各阶段分段外验，非概率级联传递。
